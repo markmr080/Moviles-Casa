@@ -1,0 +1,9 @@
+<div class="ficha" [ngStyle]="{'background-color': getColorFondo()}">
+  <img [src]="personaje.imagen" [alt]="personaje.nombre" />
+  <h3>{{ personaje.nombre }}</h3>
+  <p><strong>Raza:</strong> {{ personaje.raza }}</p>
+  <p><strong>Poder:</strong> <span *ngFor="let estrella of getEstrellas()">{{ estrella }}</span></p>
+
+  <!-- ✅ Botón de eliminar -->
+  <button class="btn-eliminar" (click)="eliminarPersonaje()">🗑️ Eliminar</button>
+</div>

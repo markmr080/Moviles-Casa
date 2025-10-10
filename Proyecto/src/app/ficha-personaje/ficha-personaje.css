@@ -1,0 +1,34 @@
+.ficha {
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 10px;
+  width: 180px;
+  text-align: center;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.ficha:hover {
+  transform: scale(1.05);
+}
+
+.ficha img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.btn-eliminar {
+  margin-top: 10px;
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
+  background-color: #d90000;
+}
