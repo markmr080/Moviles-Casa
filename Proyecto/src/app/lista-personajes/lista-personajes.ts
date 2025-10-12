@@ -1,47 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FichaPersonaje} from '../ficha-personaje/ficha-personaje';
-import { FormsModule } from '@angular/forms'; // ✅ Para ngModel
+import { Personaje } from '../models/Personaje.model';
 @Component({
   selector: 'app-lista-personajes',
-  imports: [CommonModule, FichaPersonaje, FormsModule],
+  imports: [CommonModule, FichaPersonaje],
   templateUrl: './lista-personajes.html',
   styleUrl: './lista-personajes.css'
 })
-export class ListaPersonajes {
-   personajes = [
-    { nombre: 'Aragorn', raza: 'Humano', poder: 4, imagen: 'https://i.imgur.com/dV1K5lI.jpg' },
-    { nombre: 'Legolas', raza: 'Elfo', poder: 5, imagen: 'https://i.imgur.com/8S1n5JX.jpg' },
-    { nombre: 'Gimli', raza: 'Enano', poder: 3, imagen: 'https://i.imgur.com/dQ9q4Kk.jpg' },
-    { nombre: 'Gandalf', raza: 'Mago', poder: 5, imagen: 'https://i.imgur.com/AnmOuhS.jpg' },
-    { nombre: 'Thrall', raza: 'Orco', poder: 4, imagen: 'https://i.imgur.com/8mEzSkJ.jpg' }
+export class ListaPersonajes implements OnInit{
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+
+  personajes:Personaje[]=[
+    { nombre: 'Aragorn', raza: 'Humano', poder: 4, imagen: 'https://sm.ign.com/t/ign_latam/screenshot/default/aragorn11_rmuk.1280.jpg' },
+    { nombre: 'Legolas', raza: 'Elfo', poder: 5, imagen: 'https://tierramedia.net/wp-content/uploads/legolas-1-1024x688.jpg' },
+    { nombre: 'Gimli', raza: 'Enano', poder: 3, imagen: 'images/gimlii.jpg' },
+    { nombre: 'Gandalf', raza: 'Mago', poder: 5, imagen: 'images/gandalf.jpeg' },
+    { nombre: 'Thrall', raza: 'Orco', poder: 4, imagen: 'images/thrall.jpg' }
   ];
 
-  // ✅ Modelo para el formulario
-  nuevoPersonaje = { nombre: '', raza: '', poder: 1, imagen: '' };
-
-  // ✅ Función para añadir personaje
-  agregarPersonaje() {
-    // Validación básica
-    if (!this.nuevoPersonaje.nombre.trim() || !this.nuevoPersonaje.raza.trim()) {
-      alert('Por favor, completa el nombre y la raza');
-      return;
-    }
-
-    // Imagen por defecto si no se proporciona
-    if (!this.nuevoPersonaje.imagen.trim()) {
-      this.nuevoPersonaje.imagen = 'https://via.placeholder.com/150?text=Personaje';
-    }
-
-    // Añadir al array (crea nueva referencia)
-    this.personajes = [...this.personajes, { ...this.nuevoPersonaje }];
-
-    // Limpiar formulario
-    this.nuevoPersonaje = { nombre: '', raza: '', poder: 1, imagen: '' };
-  }
-
-  // ✅ Nuevo método para eliminar
-  eliminarPersonaje(nombre: string) {
-    this.personajes = this.personajes.filter(p => p.nombre !== nombre);
-  }
+  
 }

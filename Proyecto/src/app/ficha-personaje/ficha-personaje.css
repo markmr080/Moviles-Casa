@@ -1,34 +1,32 @@
-.ficha {
-  border: 2px solid #ccc;
-  border-radius: 12px;
-  padding: 10px;
-  width: 180px;
+.contenedor{
+  width: 200px;
+  height: auto;
+  background-color: aliceblue;
+  border: 1px solid black;
+  padding: 2%;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contenedor:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+img {
+  width: 200px;
+  height: 150px;
+  align-content: center;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+p{
+  justify-content: center;
   text-align: center;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-  position: relative;
-  transition: transform 0.2s ease;
 }
-
-.ficha:hover {
-  transform: scale(1.05);
-}
-
-.ficha img {
-  width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.btn-eliminar {
-  margin-top: 10px;
-  background-color: #ff4d4d;
-  border: none;
-  color: white;
-  padding: 6px 10px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.btn-eliminar:hover {
-  background-color: #d90000;
+h3{
+  text-align: center;
 }

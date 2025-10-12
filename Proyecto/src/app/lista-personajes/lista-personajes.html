@@ -1,18 +1,7 @@
-<h2>Lista de Personajes</h2>
+<div class="grid">
 
-<div class="formulario">
-  <input type="text" placeholder="Nombre" [(ngModel)]="nuevoPersonaje.nombre" />
-  <input type="text" placeholder="Raza" [(ngModel)]="nuevoPersonaje.raza" />
-  <input type="number" placeholder="Poder (1-5)" [(ngModel)]="nuevoPersonaje.poder" min="1" max="5" />
-  <input type="text" placeholder="URL de imagen" [(ngModel)]="nuevoPersonaje.imagen" />
-  <button (click)="agregarPersonaje()">➕ Agregar</button>
-</div>
-
-<div class="contenedor">
-  @for (personaje of personajes; track personaje.nombre) {
-    <app-ficha-personaje
-      [personaje]="personaje"
-      (eliminar)="eliminarPersonaje($event)"> <!-- ✅ Escucha el evento -->
-    </app-ficha-personaje>
+  @for (persona of personajes; track persona) {
+  <app-ficha-personaje [personaj]="persona"> </app-ficha-personaje> 
   }
+  
 </div>

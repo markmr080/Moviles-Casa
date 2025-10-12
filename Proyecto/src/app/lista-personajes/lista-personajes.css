@@ -1,41 +1,6 @@
-h2 {
-  text-align: center;
-  margin-bottom: 15px;
+.grid{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 50px;
 }
 
-.formulario {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.formulario input {
-  padding: 8px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  width: 180px;
-}
-
-.formulario button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.formulario button:hover {
-  background-color: #0056b3;
-}
-
-/* 📜 Horizontal scroll o cuadrícula */
-.contenedor {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  gap: 15px;
-  padding: 10px 20px;
-}
