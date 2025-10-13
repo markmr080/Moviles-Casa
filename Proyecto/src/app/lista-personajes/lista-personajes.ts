@@ -14,10 +14,10 @@ export class ListaPersonajes implements OnInit{
     
   }
    personajes:Personaje[]=[
-    { nombre: 'Aragorn', raza: 'Humano', poder: 4, imagen: 'https://sm.ign.com/t/ign_latam/screenshot/default/aragorn11_rmuk.1280.jpg' },
-    { nombre: 'Legolas', raza: 'Elfo', poder: 5, imagen: 'https://tierramedia.net/wp-content/uploads/legolas-1-1024x688.jpg' },
-    { nombre: 'Gimli', raza: 'Enano', poder: 3, imagen: 'images/gimlii.jpg' },
-    { nombre: 'Gandalf', raza: 'Mago', poder: 5, imagen: 'images/gandalf.jpeg' },
+    { nombre: 'Anduin', raza: 'Humano', poder: 4, imagen: 'https://upload.wikimedia.org/wikipedia/en/a/a5/Anduin_Wrynn_by_Erik_Braddock.jpg' },
+    { nombre: 'Malfurion', raza: 'Elfo', poder: 5, imagen: 'https://bnetcmsus-a.akamaihd.net/cms/gallery/ARP5A1V3X2DG1400551405290.jpg' },
+    { nombre: 'Magni Barbabronce', raza: 'Enano', poder: 3, imagen: 'https://wow.zamimg.com/uploads/screenshots/normal/900122-magni-barbabronce.jpg' },
+    { nombre: 'Jaina Valiente', raza: 'Mago', poder: 5, imagen: 'https://yukharyan.com/wp-content/uploads/2022/09/jaina-valiente-pandaria.jpg' },
     { nombre: 'Thrall', raza: 'Orco', poder: 4, imagen: 'images/thrall.jpg' }
   ];
  
