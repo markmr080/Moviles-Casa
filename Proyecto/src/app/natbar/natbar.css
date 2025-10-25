@@ -5,5 +5,23 @@
     cursor: pointer;
 }
 .opcion:hover{
-        font-weight: 700;
+    font-weight: 700;
+    text-shadow: 1%;
+}
+
+.nav-halloween{
+  background-color: rgb(116, 10, 15); 
+  color: white; 
+}
+
+@media (max-width: 1000px) {
+  .opcion2 {
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .opcion1 {
+    display: none;
+  }
 }
