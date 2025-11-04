@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FichaPersonaje} from '../ficha-personaje/ficha-personaje';
 import { Personaje } from '../models/Personaje.model';
+import { ServicioHalloween } from '../../Servicios/servicio-halloween';
 @Component({
   selector: 'app-lista-personajes',
   imports: [CommonModule, FichaPersonaje],
@@ -9,10 +10,23 @@ import { Personaje } from '../models/Personaje.model';
   styleUrl: './lista-personajes.css'
 })
 export class ListaPersonajes implements OnInit{
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-    
+
+@HostBinding('style.backgroundImage') fondo: string = '';
+ngOnInit(): void {
+    this.actualizarFondo();
+
+    this.esHalloween.modoCambiado.subscribe(() => {
+      this.actualizarFondo();
+    });
   }
+
+  actualizarFondo() {
+    this.fondo = `url('${this.esHalloween.modoHalloween('lista_personajes')}')`;
+  }
+
+constructor (private esHalloween: ServicioHalloween) {
+}
+
    personajes:Personaje[]=[
     { nombre: 'Anduin', raza: 'Humano', poder: 4, imagen: 'https://upload.wikimedia.org/wikipedia/en/a/a5/Anduin_Wrynn_by_Erik_Braddock.jpg' },
     { nombre: 'Malfurion', raza: 'Elfo', poder: 5, imagen: 'https://bnetcmsus-a.akamaihd.net/cms/gallery/ARP5A1V3X2DG1400551405290.jpg' },

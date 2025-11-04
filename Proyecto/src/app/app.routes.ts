@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { Contador } from './contador/contador';
-import { Matatopos } from './matatopos/matatopos';
-import { Animacion } from './animacion/animacion';
-import { ListaPersonajes } from './lista-personajes/lista-personajes';
-import { FichaPersonaje } from './ficha-personaje/ficha-personaje';
-import { FormularioHalloween } from './formulario-halloween/formulario-halloween';
+import { Contador } from './Componentes/contador/contador';
+import { Matatopos } from './Componentes/matatopos/matatopos';
+import { Animacion } from './Componentes/animacion/animacion';
+import { ListaPersonajes } from './Componentes/lista-personajes/lista-personajes';
+import { FichaPersonaje } from './Componentes/ficha-personaje/ficha-personaje';
+import { FormularioHalloween } from './Componentes/formulario-halloween/formulario-halloween';
 
 export const routes: Routes = [
     {path:'contador', component:Contador},

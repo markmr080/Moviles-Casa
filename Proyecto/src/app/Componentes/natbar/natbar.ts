@@ -6,6 +6,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { CommonModule } from '@angular/common';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
+import { ServicioHalloween } from '../../Servicios/servicio-halloween';
 
 
 @Component({
@@ -15,7 +16,19 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './natbar.css'
 })
 export class Natbar {
-pi:String="pi piiiiiii";
+  pi:String="pi piiiiiii";
+  esHalloween = false;
 
-  esHalloween:boolean = true;
+  
+
+
+  constructor(private servicioHalloween:ServicioHalloween) {
+  }
+
+  cambiarModo() {
+    this.servicioHalloween.cambiarModo(this.esHalloween);
+  }
+  
+
+  
 }

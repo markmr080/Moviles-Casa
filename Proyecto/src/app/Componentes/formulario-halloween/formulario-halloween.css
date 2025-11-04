@@ -1,0 +1,47 @@
+.normal_mensaje-error{
+    color: red;
+    size: small;
+}
+.normal_contenedor-campo{
+    display: flex;
+    flex-direction: column;
+    color: rgb(20, 18, 18);
+}
+.halloween_contenedor-campo{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.halloween_mensaje-error{
+   color: #b30000;
+   size: small;
+}
+
+::ng-deep .example-margin .mdc-label {
+  color: rgb(196, 11, 11) ;             
+}
+
+::ng-deep .example-margin .mdc-checkbox__background {
+  border-color: orange !important;
+}
+
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  transition: background-image 0.5s ease-in-out;
+}
+
+form {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 40px auto;
+}

@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Animacion } from './animacion/animacion';
-import { Contador } from './contador/contador';
-import { Natbar } from './natbar/natbar';
-import { Matatopos } from './matatopos/matatopos';
-import { Menu } from './menu/menu';
+import { Animacion } from './Componentes/animacion/animacion';
+import { Contador } from './Componentes/contador/contador';
+import { Natbar } from './Componentes/natbar/natbar';
+import { Matatopos } from './Componentes/matatopos/matatopos';
+import { Menu } from './Componentes/menu/menu';
 
 @Component({
   selector: 'app-root',
