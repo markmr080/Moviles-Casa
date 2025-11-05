@@ -7,23 +7,6 @@
     flex-direction: column;
     color: rgb(20, 18, 18);
 }
-.halloween_contenedor-campo{
-    display: flex;
-    flex-direction: column;
-    color: white;
-}
-.halloween_mensaje-error{
-   color: #b30000;
-   size: small;
-}
-
-::ng-deep .example-margin .mdc-label {
-  color: rgb(196, 11, 11) ;             
-}
-
-::ng-deep .example-margin .mdc-checkbox__background {
-  border-color: orange !important;
-}
 
 
 :host {
@@ -45,3 +28,54 @@ form {
   max-width: 500px;
   margin: 40px auto;
 }
+
+
+.halloween_contenedor-campo{
+    display: flex;
+    flex-direction: column;
+     color: #ffa31a !important;
+}
+.halloween_mensaje-error{
+   color: #b30000;
+   size: small;
+}
+
+::ng-deep .mdc-checkbox__background {
+  border-color: #ff6600 !important;
+}
+
+::ng-deep .mdc-label {
+  color: #ffa31a !important;
+  text-shadow: 0 0 5px #ff6600;
+}
+
+
+.halloween-form  {
+   background: rgba(20, 20, 20, 0.85);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 500px;
+  margin: 40px auto;
+  box-shadow: 0 0 30px rgba(255, 140, 0, 0.6);
+  border: 2px solid #ff6600;
+  transition: all 0.5s ease;
+}
+.halloween-form button:hover {
+  background-color: #ff9900;
+  transform: scale(1.05);
+}
+.halloween-form button {
+  background-color: #ff6600;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 100, 0, 0.8);
+}
+
+
+
+

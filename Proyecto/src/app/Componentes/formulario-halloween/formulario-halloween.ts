@@ -45,6 +45,7 @@ disfraces: Disfraz[] = [
   }
 
   formulario: FormGroup;
+  formularioHalloween: FormGroup;
 
   constructor(private fb: FormBuilder, public esHalloween: ServicioHalloween) {
     
@@ -52,14 +53,16 @@ disfraces: Disfraz[] = [
       nombre: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]],
       email: ['', [Validators.required, Validators.email, Validators.minLength(3)]],
       edad: ['', [Validators.required, Validators.min(0)]],
+    });
+
+
+    this.formularioHalloween = this.fb.group({
       nombre_halloween: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]],
       email_halloween:['', [Validators.required, Validators.email,]],
       disfraz:['', [Validators.required, Validators.minLength(3)]],
-      checkBox: [null, Validators.requiredTrue],
-      fechaLlegada: ['', Validators.required] 
-
+      checkBox: [false, Validators.requiredTrue],
+      fechaLlegada: [null, Validators.required] 
     });
-
   }
 
   mostrar(){
@@ -67,6 +70,16 @@ disfraces: Disfraz[] = [
         console.log("El formulario contiene errores.");
       }else {
         console.log(this.formulario.value);
+      }
+  }
+
+  mostrarHalloween(){
+      if(this.formularioHalloween.invalid){
+        console.log("El formulario contiene errores.");
+        alert("🩸¡Este formulario no asustaria a nadie, rellenalo!👻");
+      }else {
+        console.log(this.formularioHalloween.value);
+         alert("🎃 ¡Bienvenido/a, " + this.formularioHalloween.get('nombre_halloween')?.value + " Tu entrada para la fiesta del castillo ha sido registrada con éxito.");
       }
   }
 
@@ -79,12 +92,12 @@ disfraces: Disfraz[] = [
   }
 
   resetearHalloween(){
-    this.formulario.reset({
+    this.formularioHalloween.reset({
       nombre_halloween: '',
       email_halloween: '',
       disfraz:'',
-      checkbox: null,
-      fechaLlegada:'',
+      checkbox: false,
+      fechaLlegada:null,
 
     });
   }

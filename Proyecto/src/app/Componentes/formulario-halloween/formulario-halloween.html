@@ -38,32 +38,32 @@
   </form>
   }@else {
 
-  <form [formGroup]="formulario" (ngSubmit)="mostrar()">
-    <div class="normal_contenedor-campo">
+  <form class="halloween-form" [formGroup]="formularioHalloween" (ngSubmit)="mostrarHalloween()">
+    <div class="halloween_contenedor-campo">
          <label for="nombre_halloween">Nombre: </label>
           <input id="nombre_halloween" formControlName="nombre_halloween">
-            @if(formulario.controls['nombre_halloween'].touched){
+            @if(formularioHalloween.controls['nombre_halloween'].touched){
             <div class="halloween_mensaje-error">
-              @if(formulario.controls['nombre_halloween'].hasError('required')) { <p>👻 Este campo da más miedo vacío, ¡rellénalo!</p> }
-              @if(formulario.controls['nombre_halloween'].hasError('minlength')) { <p>Mínimo 3 letras</p> }
-              @if(formulario.controls['nombre_halloween'].hasError('maxlength')) { <p>Máximo 10 letras</p> }
+              @if(formularioHalloween.controls['nombre_halloween'].hasError('required')) { <p>👻 Este campo da más miedo vacío, ¡rellénalo!</p> }
+              @if(formularioHalloween.controls['nombre_halloween'].hasError('minlength')) { <p>Mínimo 3 letras</p> }
+              @if(formularioHalloween.controls['nombre_halloween'].hasError('maxlength')) { <p>Máximo 10 letras</p> }
             </div>
            }
     </div>
 
-    <div class="normal_contenedor-campo">
+    <div class="halloween_contenedor-campo">
          <label for="email_halloween">Email: </label>
           <input id="email_halloween" formControlName="email_halloween">
-            @if(formulario.controls['email_halloween'].touched){
+            @if(formularioHalloween.controls['email_halloween'].touched){
             <div class="halloween_mensaje-error">
-              @if(formulario.controls['email_halloween'].hasError('required')) { <p>👻 Este campo da más miedo vacío, ¡rellénalo!</p> }
-              @if(formulario.controls['email_halloween'].hasError('email')) { <p>🩸 Ese correo parece maldito… revisa el formato</p> }
+              @if(formularioHalloween.controls['email_halloween'].hasError('required')) { <p>👻 Este campo da más miedo vacío, ¡rellénalo!</p> }
+              @if(formularioHalloween.controls['email_halloween'].hasError('email')) { <p>🩸 Ese correo parece maldito… revisa el formato</p> }
               
             </div>
            }
     </div>
 
-    <div class="normal_contenedor-campo">
+    <div class="halloween_contenedor-campo">
       <label for="disfraz">Tipo de invitado: </label>
         <mat-form-field>
             <mat-select>
@@ -74,17 +74,18 @@
         </mat-form-field>
     </div>
 
-    <div class="normal_contenedor-campo">
+    <div class="halloween_contenedor-campo">
          <label for="disfraz">Disfraz: </label>
           <input id="disfraz" formControlName="disfraz">
-            @if(formulario.controls['disfraz'].touched){
+            @if(formularioHalloween.controls['disfraz'].touched){
             <div class="halloween_mensaje-error">
-              @if(formulario.controls['disfraz'].hasError('required')) { <p>👻 Este campo da más miedo vacío, ¡rellénalo!</p> }
-              @if(formulario.controls['disfraz'].hasError('minlength')) { <p>Mínimo 3 letras</p> }
+              @if(formularioHalloween.controls['disfraz'].hasError('required')) { <p>👻 Este campo da más miedo vacío, ¡rellénalo!</p> }
+              @if(formularioHalloween.controls['disfraz'].hasError('minlength')) { <p>Mínimo 3 letras</p> }
             </div>
            }
     </div>
- <div class="normal_contenedor-campo">
+ <div class="halloween_contenedor-campo">
+  <label for="fecha">Fecha: </label>
   <mat-form-field appearance="fill">
     <mat-label>Fecha de llegada</mat-label>
     <input
@@ -96,24 +97,26 @@
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
-  @if(formulario.controls['fechaLlegada'].touched) {
+  @if(formularioHalloween.controls['fechaLlegada'].touched) {
      <div class="halloween_mensaje-error">
-           @if(formulario.controls['fechaLlegada'].hasError('required')) { <p>Tienes que seleccionar una fecha</p> }
+           @if(formularioHalloween.controls['fechaLlegada'].hasError('required')) { <p>Tienes que seleccionar una fecha</p> }
       </div>
     }
   </div> 
 
-   <div class="normal_contenedor-campo">
+   <div class="halloween_contenedor-campo">
     <mat-checkbox class="example-margin" formControlName="checkBox">Prometo no morder a los demas invitados</mat-checkbox>
-       @if(formulario.controls['checkBox'].touched) {
+       @if(formularioHalloween.controls['checkBox'].touched) {
           <div class="halloween_mensaje-error">
-           @if(formulario.controls['checkBox'].hasError('required')) { <p>Debes prometer que no morderás a nadie 🧛‍♂️</p> }
+           @if(formularioHalloween.controls['checkBox'].hasError('required')) { <p>Debes prometer que no morderás a nadie 🧛‍♂️</p> }
           </div>
         }      
   </div>
 
     <p></p>
-    <button type="button" (click)="resetear()">Resetear</button>
-    <button type="submit">Enviar</button>
+    <button type="button" (click)="resetearHalloween()">Resetear</button>
+
+
+    <button type="submit" class="submit">Enviar</button>
   </form>
   }
