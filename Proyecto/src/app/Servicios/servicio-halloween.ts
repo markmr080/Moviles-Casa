@@ -46,8 +46,8 @@ export class ServicioHalloween {
         break;
 
       default:
-        fondoNormal = 'https://img.freepik.com/foto-gratis/textura-fondo-claro_23-2147740373.jpg';
-        fondoHalloween = 'https://img.freepik.com/vector-gratis/fondo-halloween-calabaza-espeluznante_23-2149073449.jpg';
+        fondoNormal = '';
+        fondoHalloween = '';
         break;
     }
 
