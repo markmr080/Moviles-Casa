@@ -1,15 +1,39 @@
+<div class="contenedor">
+  <div class="tablero">
+    <div class="cuadrado 1" (click)="pincharTopo1()">
+      <div *ngIf="numero == 1; else blanco" class="imagen"></div>
+    </div>
+    <div class="cuadrado 2" (click)="pincharTopo2()">
+      <div *ngIf="numero == 2; else blanco" class="imagen"></div>
+    </div>
+    <div class="cuadrado 3" (click)="pincharTopo3()">
+      <div *ngIf="numero == 3; else blanco" class="imagen"></div>
+    </div>
+    <div class="cuadrado 4" (click)="pincharTopo4()">
+      <div *ngIf="numero == 4; else blanco" class="imagen"></div>
+    </div>
+    <div class="cuadrado 5" (click)="pincharTopo5()">
+      <div *ngIf="numero == 5; else blanco" class="imagen"></div>
+    </div>
+    <div class="cuadrado 6" (click)="pincharTopo6()">
+      <div *ngIf="numero == 6; else blanco" class="imagen"></div>
+    </div>
+    <div class="cuadrado 7" (click)="pincharTopo7()">
+      <div *ngIf="numero == 7; else blanco" class="imagen"></div>
+    </div>
+    <div class="cuadrado 8" (click)="pincharTopo8()">
+      <div *ngIf="numero == 8; else blanco" class="imagen"></div>
+    </div>
+    <div class="cuadrado 9" (click)="pincharTopo9()">
+      <div *ngIf="numero == 9; else blanco" class="imagen"></div>
+    </div>
+  </div>
 
-<div class="tablero">
-    @for(t of topos; track $index){
-    <div class="casilla">
-        @if(t == 1){
-            <div class="topo" (click)="mataTopo($index)"></div>
-        } @else{
-            <div class="no-topo" (click)="fallo()"></div>
-        }
-           </div>
-    }
-
+  <p class="num">has matado {{ toposCazados }} topos </p>
+  <p class="num">has fallado {{ toposFallados }} topos </p>
+  <button (click)="resetearTopo()">Reset</button>
 </div>
 
-<div class="contador-puntos">{{contador}}</div>
+<ng-template #blanco>
+  <div class="circulo blanco"></div>
+</ng-template>

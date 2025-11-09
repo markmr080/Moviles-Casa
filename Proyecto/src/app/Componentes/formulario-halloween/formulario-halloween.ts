@@ -24,25 +24,21 @@ imports: [ReactiveFormsModule, MatCheckboxModule, MatSelectModule, MatTimepicker
 export class FormularioHalloween implements OnInit{
   
 @HostBinding('style.backgroundImage') fondo: string = '';
- 
 
-disfraces: Disfraz[] = [
-    {disfraz: 'Humano', verDisfraz:"Humano"},
-    {disfraz: 'Bruja', verDisfraz:"Bruja"},
-    {disfraz: 'Vampiro', verDisfraz:"Vampiro"},
-    {disfraz: 'Fantasma', verDisfraz:"Fastasma"}
-  ];
-
-  ngOnInit(): void {
+    ngOnInit(): void {
     this.actualizarFondo();
     this.esHalloween.modoCambiado.subscribe(() => {
-    this.actualizarFondo();
+      this.actualizarFondo();
     });
   }
 
   actualizarFondo() {
-    this.fondo = `url('${this.esHalloween.modoHalloween('formulario')}')`;
-  }
+    if (this.esHalloween.halloween) {
+      this.fondo = `url('${this.esHalloween.modoHalloween('formulario')}')`;
+    } else  {
+      this.fondo = `url('${this.esHalloween.modoHalloween('formulario')}')`;
+    }
+  } 
 
   formulario: FormGroup;
   formularioHalloween: FormGroup;
@@ -64,7 +60,12 @@ disfraces: Disfraz[] = [
       fechaLlegada: [null, Validators.required] 
     });
   }
-
+  disfraces: Disfraz[] = [
+    {disfraz: 'Humano', verDisfraz:"Humano"},
+    {disfraz: 'Bruja', verDisfraz:"Bruja"},
+    {disfraz: 'Vampiro', verDisfraz:"Vampiro"},
+    {disfraz: 'Fantasma', verDisfraz:"Fastasma"}
+  ];
   mostrar(){
       if(this.formulario.invalid){
         console.log("El formulario contiene errores.");

@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { ServicioHalloween } from '../../Servicios/servicio-halloween';
 
 
+
 @Component({
   selector: 'app-natbar',
   imports: [MatToolbarModule,  MatIconModule,  RouterLink, MatSlideToggleModule, FormsModule, CommonModule, MatMenuModule],
@@ -16,19 +17,26 @@ import { ServicioHalloween } from '../../Servicios/servicio-halloween';
   styleUrl: './natbar.css'
 })
 export class Natbar {
-  pi:String="pi piiiiiii";
-  esHalloween = false;
+esHalloween = false;
+  esNavidad = false;
 
-  
+  constructor(
+    private servicioHalloween: ServicioHalloween,
+  ) {}
 
-
-  constructor(private servicioHalloween:ServicioHalloween) {
+  cambiarModo(modo: 'halloween' | 'navidad') {
+    if (modo === 'halloween' && this.esHalloween) {
+      this.esNavidad = false;
+      this.servicioHalloween.cambiarModoNavidad(false);
+      this.servicioHalloween.cambiarModo(true);
+    } else if (modo === 'navidad' && this.esNavidad) {
+      this.esHalloween = false;
+      this.servicioHalloween.cambiarModo(false);
+      this.servicioHalloween.cambiarModoNavidad(true);
+    } else {
+      this.servicioHalloween.cambiarModo(false);
+      this.servicioHalloween.cambiarModoNavidad(false);
+    }
   }
-
-  cambiarModo() {
-    this.servicioHalloween.cambiarModo(this.esHalloween);
-  }
-  
-
   
 }

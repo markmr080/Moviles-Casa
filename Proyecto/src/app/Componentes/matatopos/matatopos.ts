@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { ServicioHalloween } from '../../Servicios/servicio-halloween';
 @Component({
   selector: 'app-matatopos',
   imports: [CommonModule, MatButtonModule],
@@ -8,30 +9,148 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './matatopos.css'
 })
 export class Matatopos {
-  topos:number[]=[0,0,0,0,1,0,0,0,0];
-  contador:number=0;
+ 
+numero:number=0;
 
-  mataTopo(index:number){
-    let nuevoTopo = this.devolverNuevoTopo(index);
-    this.topos=[0,0,0,0,0,0,0,0,0];
-    this.topos[nuevoTopo]=1;
-    this.contador++;
+min:number = 1;
+max:number = 9;
+
+toposCazados:number =0;
+toposFallados:number =0;
+
+constructor (private esHalloween: ServicioHalloween) {
+}
+
+@HostBinding('style.backgroundImage') fondo: string = '';
+
+    ngOnInit(): void {
+    this.saleTopo();
+    this.actualizarFondo();
+    this.esHalloween.modoCambiado.subscribe(() => {
+      this.actualizarFondo();
+    });
   }
 
-  devolverNuevoTopo(i:number){
-    let nuevoTopo=Math.floor(Math.random()*9);
-    
-    while (nuevoTopo==i){
-      nuevoTopo=Math.floor(Math.random()*9);
+  actualizarFondo() {
+    if (this.esHalloween.halloween) {
+      this.fondo = `url('${this.esHalloween.modoHalloween('lista_personajes')}')`;
+    } else  {
+      this.fondo = `url('${this.esHalloween.modoHalloween('lista_personajes')}')`;
     }
-    return nuevoTopo;
+  } 
 
+
+saleTopo(){
+  this.numero =Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+}
+
+resetearTopo() {
+  this.toposCazados = 0;
+  this.toposFallados = 0;
+}
+
+pincharTopo1(){
+  
+  if(this.numero == 1) {
+    console.log ("Has dado al topo");
+    this.toposCazados++;
+  }else {
+    console.log("Has fallado malo");
+    this.toposFallados++;
+  }
+  this.saleTopo();
+}
+
+pincharTopo2(){  
+  if(this.numero == 2) {
+    console.log ("Has dado al topo");
+    this.toposCazados++;
+  }else {
+    console.log("Has fallado malo");
+    this.toposFallados++;
+  }
+  this.saleTopo();
+}
+
+pincharTopo3(){
+  if(this.numero == 3) {
+    console.log ("Has dado al topo");
+    this.toposCazados++;
+  }else {
+    console.log("Has fallado malo");
+    this.toposFallados++;
+  }
+   this.saleTopo();
+}
+pincharTopo4(){
+ 
+  if(this.numero == 4) {
+    console.log ("Has dado al topo");
+    this.toposCazados++;
+  }else {
+    console.log("Has fallado malo");
+    this.toposFallados++;
+  }
+   this.saleTopo();
+}
+pincharTopo5(){
+ 
+  if(this.numero == 5) {
+    console.log ("Has dado al topo");
+    this.toposCazados++;
+  }else {
+    console.log("Has fallado malo");
+    this.toposFallados++;
+  }
+   this.saleTopo();
+}
+pincharTopo6(){
+  
+  if(this.numero == 6) {
+    console.log ("Has dado al topo");
+    this.toposCazados++;
+  }else {
+    console.log("Has fallado malo");
+    this.toposFallados++;
+  }
+  this.saleTopo();
+
+}
+pincharTopo7(){
+  
+
+  if(this.numero == 7) {
+    console.log ("Has dado al topo");
+    this.toposCazados++;
+  }else {
+    console.log("Has fallado malo");
+    this.toposFallados++;
   }
 
-  fallo(){
-    this.contador--;
+  this.saleTopo();
+}
+pincharTopo8(){
+  
+  if(this.numero == 8) {
+    console.log ("Has dado al topo");
+    this.toposCazados++;
+  }else {
+    console.log("Has fallado malo");
+    this.toposFallados++;
   }
-
+  this.saleTopo();
+}
+pincharTopo9(){
+  
+  if(this.numero == 9) {
+    console.log ("Has dado al topo");
+    this.toposCazados++;
+  }else {
+    console.log("Has fallado malo");
+    this.toposFallados++;
+  }
+  this.saleTopo();
+}
 }
 
 
