@@ -2,8 +2,8 @@ import { Routes } from '@angular/router';
 import { Contador } from './Componentes/contador/contador';
 import { Matatopos } from './Componentes/matatopos/matatopos';
 import { Animacion } from './Componentes/animacion/animacion';
-import { ListaPersonajes } from './Componentes/lista-personajes/lista-personajes';
-import { FichaPersonaje } from './Componentes/ficha-personaje/ficha-personaje';
+import { ListaPersonajes } from './Componentes/Personajes/lista-personajes/lista-personajes';
+import { FichaPersonaje } from './Componentes/Personajes/ficha-personaje/ficha-personaje';
 import { FormularioHalloween } from './Componentes/formulario-halloween/formulario-halloween';
 
 export const routes: Routes = [
@@ -13,6 +13,4 @@ export const routes: Routes = [
     {path: 'lista-personajes', component:ListaPersonajes},
     {path: 'ficha-personajes', component:FichaPersonaje},
     {path: "formulario-halloween", component:FormularioHalloween}
-
-
 ];

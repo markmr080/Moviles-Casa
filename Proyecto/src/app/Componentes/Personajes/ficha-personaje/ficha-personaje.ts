@@ -1,7 +1,6 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Personaje } from '../models/Personaje.model';
-import { ServicioHalloween } from '../../Servicios/servicio-halloween';
+import { Personaje } from '../../models/Personaje.model';
 @Component({
   selector: 'app-ficha-personaje',
   imports: [CommonModule],
