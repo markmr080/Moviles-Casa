@@ -39,9 +39,10 @@ export class ServicioHalloween {
         fondoNavidad = 'https://wallpapers.com/images/hd/1920x1080-hd-christmas-a4w9iz29xd804afm.jpg';
         break;
 
-      case 'inicio':
-        fondoNormal = 'https://img.freepik.com/vector-premium/fondo-blanco-lineas-suaves_8829-2298.jpg';
-        fondoHalloween = 'https://img.freepik.com/vector-premium/fondo-halloween-oscuro-calabaza-brillante_389765-305.jpg';
+      case 'matatopos':
+        fondoNormal = 'https://m.media-amazon.com/images/I/61-fg1fwlpL.jpg';
+        fondoHalloween = 'https://t3.ftcdn.net/jpg/09/43/63/48/360_F_943634824_INJVs29yVWLTGj5ofpTYFJnluOf04qga.jpg';
+        fondoNavidad = 'https://img3.wallspic.com/crops/9/2/0/6/66029/66029-el_dia_de_navidad-invierno-decoracion_de_la_navidad-nieve-navidad-1921x1080.jpg';
         break;
 
       default:

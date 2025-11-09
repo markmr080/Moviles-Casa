@@ -33,9 +33,9 @@ constructor (private esHalloween: ServicioHalloween) {
 
   actualizarFondo() {
     if (this.esHalloween.halloween) {
-      this.fondo = `url('${this.esHalloween.modoHalloween('lista_personajes')}')`;
+      this.fondo = `url('${this.esHalloween.modoHalloween('matatopos')}')`;
     } else  {
-      this.fondo = `url('${this.esHalloween.modoHalloween('lista_personajes')}')`;
+      this.fondo = `url('${this.esHalloween.modoHalloween('matatopos')}')`;
     }
   } 
 

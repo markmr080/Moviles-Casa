@@ -9,12 +9,13 @@ body {
 }
 
 .contenedor {
-    background-color: rgb(124, 27, 27); /* solo la franja blanca */
+    background-color: rgba(124, 27, 27, 0.8); 
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    margin-top: 50px; /* opcional */
+    margin-top: 50px;
 }
+
 
 .tablero {  
     display: grid;

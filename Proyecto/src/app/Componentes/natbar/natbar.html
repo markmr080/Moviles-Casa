@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" [ngClass]="{'nav-halloween' : esHalloween}">
+<mat-toolbar color="primary" [ngClass]="{'nav-halloween': esHalloween, 'nav-navidad': esNavidad}">
   <span class="example-spacer"></span>
   <span class="opcion opcion1" matButton [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></span>
     <mat-menu class #menu="matMenu">
@@ -21,7 +21,7 @@
   <span class="example-spacer"></span>
 
 
-   <span>	Halloween<mat-slide-toggle [(ngModel)]="esHalloween" (change)="cambiarModo('halloween')"> </mat-slide-toggle></span>
-   <span>Navidad	<mat-slide-toggle [(ngModel)]="esNavidad" (change)="cambiarModo('navidad')"> </mat-slide-toggle></span>
+   <span>Halloween<mat-slide-toggle [(ngModel)]="esHalloween" (change)="cambiarModo('halloween')"></mat-slide-toggle></span>
+   <span>Navidad<mat-slide-toggle [(ngModel)]="esNavidad" (change)="cambiarModo('navidad')"></mat-slide-toggle></span>
 
 </mat-toolbar>
