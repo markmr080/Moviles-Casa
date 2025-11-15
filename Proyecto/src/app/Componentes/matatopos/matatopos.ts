@@ -27,7 +27,7 @@ constructor (private esHalloween: ServicioHalloween) {
     this.saleTopo();
     this.actualizarFondo();
     this.esHalloween.modoCambiado.subscribe(() => {
-      this.actualizarFondo();
+    this.actualizarFondo();
     });
   }
 
@@ -49,8 +49,7 @@ resetearTopo() {
   this.toposFallados = 0;
 }
 
-pincharTopo1(){
-  
+pincharTopo1(){ 
   if(this.numero == 1) {
     console.log ("Has dado al topo");
     this.toposCazados++;
