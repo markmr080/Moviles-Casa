@@ -13,9 +13,6 @@ export class Clicker {
 
   }
   
-  clickMejora(){
-    this.clicker.clickMejora();
-  }
 
 
 }
