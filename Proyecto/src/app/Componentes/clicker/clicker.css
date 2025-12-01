@@ -1,0 +1,19 @@
+.mejora {
+  width: 150px;
+  height: 50px;
+  background: #03a9f4;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.mejora:hover {
+  background: #0288d1;
+}
+.mejora:active {
+  transform: scale(0.95);
+}
