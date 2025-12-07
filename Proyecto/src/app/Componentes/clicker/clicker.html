@@ -1,16 +1,36 @@
-<div class="contenedor">
-    <div class = "boton">    
-        Haz click
-        <div class="mejora" (click)="clicker.click()">{{clicker.clicksTotales}} </div>
+<div class="contenedor ">
+    <div class="mejoras">
+        <div class="boton">    
+            <img src="/images/LlaveDelReino.png" width="50" height="50"> 
+            <p></p>
+            Numero de mejoras: {{clicker.numeroMejoras}}
+            <div class="mejora" (click)="clicker.clickMejora1()">{{clicker.costeMejora1}}</div>
+        </div>
+        <div class="boton">  
+            <img src="/images/LlaveRiku.png" width="50" height="50"> 
+            <p></p>
+            Numero de mejoras: {{clicker.numeroMejoras2}}
+            <div class="mejora" (click)="clicker.clickMejora2()">{{clicker.costeMejora2}}</div>
+        </div>
+        <div class="boton">    
+            <img src="/images/ArmaArtema.png" width="50" height="50"> 
+            <p></p>
+            Numero de mejoras: {{clicker.numeroMejoras3}}
+            <div class="mejora" (click)="clicker.clickMejora3()">{{clicker.costeMejora3}}</div>
+        </div>
+        <div class="boton">    
+            <img src="/images/sora.png" width="50" height="50"> 
+            <p></p>
+            Numero de mejoras: {{clicker.totalMejoraAuto}}
+            <div class="mejora" (click)="clicker.mejoraClickAuto()">{{clicker.costeMejoraAuto}}</div>
+        </div>
     </div>
 
-    <div class = "boton">    
-        Coste de mejora:{{clicker.costeMejora1}}
-        <div class="mejora" (click)="clicker.clickMejora1()">{{clicker.numeroMejoras}}</div>
+    <div class="click-central">
+        <div class="corazon" (click)="clicker.click()"> 
+            <img src="/images/coraKH.png" width="200" height="250">
+        </div>
+        <div class="sora"></div>
+        <div class="contador">{{ clicker.clicksTotales }}</div>
     </div>
-    <div class = "boton">    
-        Coste de mejora:{{clicker.costeMejora2}}
-        <div class="mejora" (click)="clicker.clickMejora2()">{{clicker.numeroMejoras2}}</div>
-    </div>
-
 </div>

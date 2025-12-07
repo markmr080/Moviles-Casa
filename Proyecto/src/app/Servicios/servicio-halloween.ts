@@ -45,6 +45,12 @@ export class ServicioHalloween {
         fondoNavidad = 'https://img3.wallspic.com/crops/9/2/0/6/66029/66029-el_dia_de_navidad-invierno-decoracion_de_la_navidad-nieve-navidad-1921x1080.jpg';
         break;
 
+      case 'clicker':
+        fondoNormal = '/images/kingdom-hearts-wallpaper-preview.jpg';
+        fondoHalloween = '/images/kingdom-hearts-full-1449600.jpg';
+        fondoNavidad = '/images/christmas-town-from-kingdom-hearts-x-the-nightmare-before-v0-4scyzwbkxh7a1.jpg';
+        break;  
+
       default:
         fondoNormal = '';
         fondoHalloween = '';

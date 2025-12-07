@@ -6,15 +6,33 @@ import { Injectable } from '@angular/core';
 export class ClickerService {
   
   valorClick:number = 1;
+
   clicksTotales:number = 0; 
+
+  totalMejoraAuto : number = 1;
+  costeMejoraAuto:number = 10;
+
   costeMejora1:number = 10;
-  numeroMejoras:number = 0;
+  numeroMejoras:number = 1;
   costeMejora2:number = 1000;
-  numeroMejoras2:number = 0;
+  numeroMejoras2:number = 1;
+  costeMejora3:number = 10000;
+  numeroMejoras3:number = 1;
+ 
+
+
+  private intervalId: any;
 
   click(){
     this.clicksTotales += this.valorClick;
   }
+
+  startAutoClick() {
+    this.intervalId = setInterval(() => {
+      this.clicksTotales += this.totalMejoraAuto + 1; // Suma 1 cada 3 segundos
+    }, 3000); // 3000 ms = 3 segundos
+  }
+  
 
   clickMejora1(){
     const valormejora= this.costeMejora1;
@@ -37,24 +55,56 @@ export class ClickerService {
       return;
     }
   }
-  
-  mejora1(){
-    this.costeMejora1 = Math.round(this.costeMejora1 * 1.45);
 
+   clickMejora3(){
+    const valormejora= this.costeMejora3;
+
+    if (this.clicksTotales>=valormejora) {
+        this.mejora3();
+        this.clicksTotales -= valormejora;
+    }else {
+      return;
+    }
+  }
+
+  mejoraClickAuto(){
+    const valormejora=  this.costeMejoraAuto;
+    if (this.clicksTotales>=valormejora){
+      this.mejoraAutomatica();
+      this.clicksTotales -=valormejora;
+    }else {
+      return;
+    }
+
+  }
+  
+  mejoraAutomatica(){
+    this.costeMejoraAuto = Math.round(this.costeMejoraAuto * 10);
+    this.totalMejoraAuto++;
+  }
+
+
+  mejora1(){
+    this.costeMejora1 = Math.round(this.costeMejora1 * 1.70);
     if (this.numeroMejoras === 0) {
     this.valorClick = 2;
   } else {
-    // Mejoras siguientes → +10% por cada compra
-    this.valorClick =Math.round(this.valorClick * 1.2) ;
+    this.valorClick = Math.round(this.valorClick * 0.3 + this.numeroMejoras) ;
   }
 
-  this.numeroMejoras++;
+    this.numeroMejoras++;
   }
 
   mejora2(){
-    this.costeMejora2 = Math.round(this.costeMejora2 * 2.45);
-    this.valorClick =Math.round(this.valorClick * 1.65) ;
+    this.costeMejora2 = Math.round(this.costeMejora2 * 1.70);
+    this.valorClick =Math.round(this.valorClick * 0.65 + this.numeroMejoras2) ;
     this.numeroMejoras2++;
+  }
+
+  mejora3(){
+    this.costeMejora3 = Math.round(this.costeMejora3 * 1.70);
+    this.valorClick =Math.round(this.valorClick * 1 + this.numeroMejoras3) ;
+    this.numeroMejoras3++;
   }
 
 }

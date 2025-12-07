@@ -1,19 +1,154 @@
+body {
+    background-color: black; /* Fondo negro para toda la página */
+    margin: 0; /* Elimina márgenes por defecto para mejor centrado */
+    padding: 0;
+    font-family: Arial, sans-serif; /* Opcional, para consistencia */
+}
+
+.contenedor {
+    border-radius: 15px;
+    padding: 20px; 
+    /* AÑADE O MODIFICA ESTO: */
+    display: flex;
+    flex-direction: column-reverse; /* Pone el 2º div arriba y el 1º abajo */
+    gap: 20px; /* Espacio de separación entre el corazón y las mejoras */
+    align-items: center; /* Centra todo horizontalmente */
+    min-height: 80vh; /* Opcional: Para que tenga una altura decente */
+}
+
+.mejoras {
+    /* AÑADE O MANTÉN ESTO: */
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Cambiado de baseline a center para mejor alineación */
+    justify-content: center; /* Asegura que los botones estén centrados */
+    flex-wrap: wrap; /* Importante: si la pantalla es pequeña, los botones bajan en vez de salirse */
+    z-index: 10;
+}
+
+.boton {
+    background-color: rgba(0, 0, 0, 0.726);
+    border: 3px solid gold; /* Borde dorado */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 18px;
+    font-weight: bold;
+    color: #015eb6; /* Texto azul */
+    width: 250px;
+    user-select: none; /* Deshabilita la selección de texto */
+    -webkit-user-select: none; /* Compatibilidad con navegadores antiguos */
+    -moz-user-select: none; /* Para Firefox */
+    -ms-user-select: none; /* Para IE/Edge */
+}
+
+.boton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
 .mejora {
-  width: 150px;
-  height: 50px;
-  background: #03a9f4;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
+    background: gold; /* Mantengo verde, pero puedes cambiar si quieres negro */
+    color: #015eb6; /* Texto azul */
+    border: 2px solid gold; /* Borde dorado */
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    user-select: none; 
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
 }
+
 .mejora:hover {
-  background: #0288d1;
+    background: gold;
 }
-.mejora:active {
-  transform: scale(0.95);
+
+.click-central {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    
+    /* AÑADE ESTO: */
+    flex-grow: 1; /* Hace que esta sección ocupe todo el espacio sobrante arriba */
+    width: 100%;
+}
+
+.corazon {
+    /* Asegura que el corazón esté centrado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Asegura que el cursor sea pointer */
+    transition: transform 0.2s; /* Transición suave para la animación */
+}
+
+.corazon:active {
+    animation: heartPulse 0.3s ease-in-out; /* Animación al pulsar */
+}
+
+@keyframes heartPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Escala al 120% */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.sora {
+    width: 142px;
+    height: 124px; 
+    background-image: url('/images/sora-Sheet.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+
+    /* Animación */
+    animation: soraAnim 3s steps(24) infinite;
+    cursor: pointer;
+}
+
+@keyframes soraAnim {
+    from {
+        background-position: 0 0; /* Comienza en el primer fotograma */
+    }
+    to {
+        background-position: -3408px 0; /* 142 * numero de fotogramas (24) */
+    }
+}
+
+.contador {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000; 
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 5px;
+    padding: 5px 10px; 
+    display: inline-block; 
+    border: 1px solid black; 
+}
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out;
 }
