@@ -1,1 +1,21 @@
-<p>eye-candy works!</p>
+<div class="contenedor">
+    <div class="sonic" [ngClass]="{
+        'sonic-no' : estadoSonic === 'no',
+        'sonic-congelado' : estadoSonic === 'congelado',
+        'sonic-enfadado' :estadoSonic === 'enfadado',
+    }">
+    </div>
+
+    <div [ngSwitch]="estadoSonic">
+        <button *ngSwitchCase = "'no'" (click)='iniciarAnimacion()'>
+            Que irritante... Congelalo
+        </button>
+        <button *ngSwitchCase = "'congelado'" (click)='iniciarAnimacion()'>
+            Se ve que tiene frio... Descongelalo
+        </button>
+        <button *ngSwitchCase = "'enfadado'" (click)='iniciarAnimacion()'>
+            Resetear
+        </button>
+
+    </div>
+</div>

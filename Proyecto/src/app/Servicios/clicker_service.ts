@@ -19,7 +19,7 @@ export class ClickerService {
   costeMejora3:number = 10000;
   numeroMejoras3:number = 1;
  
-  mejoraAleatoria:number = 600;
+  mejoraAleatoria:number = 0;
 
   private intervalId: any;
 
@@ -38,11 +38,25 @@ export class ClickerService {
   //apartado elementos aleatorios
 
   sumarMejora(){
+    this.mejoraAleatoria = Math.round(Math.random() * 600 + 1);
     this.clicksTotales += this.mejoraAleatoria;
+    console.log ("Se han sumado " + this.mejoraAleatoria + " puntos al marcador")
   }
 
+  //Reset del juego
+  resetear(){
+  this.clicksTotales = 0; 
 
+  this.totalMejoraAuto = 1;
+  this.costeMejoraAuto = 10;
 
+  this.costeMejora1 = 10;
+  this.numeroMejoras = 1;
+  this.costeMejora2 = 1000;
+  this.numeroMejoras2 = 1;1
+  this.costeMejora3 = 10000;
+  this.numeroMejoras3 = 1;
+  }
 
 
   //apartado mejoras
@@ -110,13 +124,13 @@ export class ClickerService {
 
   mejora2(){
     this.costeMejora2 = Math.round(this.costeMejora2 * 1.70);
-    this.valorClick =Math.round(this.valorClick * 0.65 + this.numeroMejoras2) ;
+    this.valorClick =Math.round(this.valorClick * 1.1 + this.numeroMejoras2) ;
     this.numeroMejoras2++;
   }
 
   mejora3(){
     this.costeMejora3 = Math.round(this.costeMejora3 * 1.70);
-    this.valorClick =Math.round(this.valorClick * 1 + this.numeroMejoras3) ;
+    this.valorClick =Math.round(this.valorClick * 1.3 + this.numeroMejoras3) ;
     this.numeroMejoras3++;
   }
 

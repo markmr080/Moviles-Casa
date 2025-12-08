@@ -1,7 +1,8 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding, HostListener, OnInit } from '@angular/core';
 import { ClickerService } from '../../Servicios/clicker_service';
 import { ServicioHalloween } from '../../Servicios/servicio-halloween';
 import { CommonModule } from '@angular/common';
+import { LocalStorage } from '../../Servicios/local-storage';
 @Component({
   selector: 'app-clicker',
   imports: [CommonModule],
@@ -12,7 +13,7 @@ export class Clicker implements OnInit {
   public topPosition: string = '0px';
   public leftPosition: string = '0px';
 
-  constructor(public clicker:ClickerService, private esHalloween: ServicioHalloween ){
+  constructor(public clicker:ClickerService, private esHalloween: ServicioHalloween, private localSto:LocalStorage ){
 
   }
 
@@ -28,7 +29,12 @@ export class Clicker implements OnInit {
     });
     this.clicker.startAutoClick();
     this.iniciarGalletaAleatoria();
- 
+    this.cargarEstado();
+
+    setInterval(() => {
+        this.guardarEstado();
+        console.log('Partida Guardada.'); 
+    }, 5000); 
   }
 
   actualizarFondo() {
@@ -39,6 +45,51 @@ export class Clicker implements OnInit {
     }
     
   }
+  //IA
+  @HostListener('window:beforeunload', ['$event'])
+    unloadNotification($event: any) {
+      console.log('Guardando estado antes de salir...');
+      this.guardarEstado();
+  }
+    
+  cargarEstado(){       
+  //Con el String (this.clicker.valor) se asigna por defecto el valor que tiene en el servicio en caso de que sea null
+  //Metodo parseInt() pasa a int la string que se obtiene del localStorage 
+    this.clicker.clicksTotales = parseInt(this.localSto.getItem('ClicksTotales') || String(this.clicker.clicksTotales));
+    this.clicker.valorClick = parseInt(this.localSto.getItem('ValorClick') || String(this.clicker.valorClick));
+
+    this.clicker.totalMejoraAuto = parseInt(this.localSto.getItem('TotalMejoraAuto') || String(this.clicker.totalMejoraAuto));
+    this.clicker.costeMejoraAuto = parseInt(this.localSto.getItem('CosteMejoraAuto') || String(this.clicker.costeMejoraAuto));
+
+
+    this.clicker.costeMejora1 = parseInt(this.localSto.getItem('CosteMejora1') || String(this.clicker.costeMejora1));
+    this.clicker.numeroMejoras = parseInt(this.localSto.getItem('NumeroMejoras1') || String(this.clicker.numeroMejoras)); 
+    
+
+    this.clicker.costeMejora2 = parseInt(this.localSto.getItem('CosteMejora2') || String(this.clicker.costeMejora2));
+    this.clicker.numeroMejoras2 = parseInt(this.localSto.getItem('NumeroMejoras2') || String(this.clicker.numeroMejoras2)); 
+  
+    this.clicker.costeMejora3 = parseInt(this.localSto.getItem('CosteMejora3') || String(this.clicker.costeMejora3));
+    this.clicker.numeroMejoras3 = parseInt(this.localSto.getItem('NumeroMejoras3') || String(this.clicker.numeroMejoras3));
+  }
+
+  //Se guarda el estado actual de los parametros del clicker
+  //Metodo String() sirve para pasar los int de los valores a String para poder almacenarlo.
+  guardarEstado(){
+    this.localSto.setItem('ClicksTotales', String(this.clicker.clicksTotales));
+    this.localSto.setItem('ValorClick', String(this.clicker.valorClick));
+    this.localSto.setItem('TotalMejoraAuto', String(this.clicker.totalMejoraAuto));
+    this.localSto.setItem('CosteMejoraAuto', String(this.clicker.costeMejoraAuto));
+    this.localSto.setItem('CosteMejora1', String(this.clicker.costeMejora1));
+    this.localSto.setItem('NumeroMejoras1', String(this.clicker.numeroMejoras));
+    this.localSto.setItem('CosteMejora2', String(this.clicker.costeMejora2));
+    this.localSto.setItem('NumeroMejoras2', String(this.clicker.numeroMejoras2));
+    this.localSto.setItem('CosteMejora3', String(this.clicker.costeMejora3));
+    this.localSto.setItem('NumeroMejoras3', String(this.clicker.numeroMejoras3));
+  }
+
+
+
   //Esta parte esta generada con IA, se encarga de generar aleatoriamente un elemento que nos mejorara o dara algo. 
 
   iniciarGalletaAleatoria(): void {
@@ -51,7 +102,7 @@ export class Clicker implements OnInit {
   // Genera un tiempo de espera aleatorio entre el mínimo y el máximo
   const tiempoEspera = Math.floor(Math.random() * (this.tiempoEsperaMax - this.tiempoEsperaMin + 1)) + this.tiempoEsperaMin;
 
-  console.log(`Próxima galleta en ${tiempoEspera / 1000} segundos.`);
+  console.log(`Próximo evento en ${tiempoEspera / 1000} segundos.`);
 
   // Programa la aparición
   setTimeout(() => {

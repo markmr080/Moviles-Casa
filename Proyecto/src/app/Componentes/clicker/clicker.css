@@ -153,12 +153,14 @@ body {
   transition: background-image 0.5s ease-in-out;
 }
 
-.galleta-aleatoria {
+.evento-aleatorio {
     position: absolute;
+    width: 120px;
+    height: 140px;
     z-index: 9999;
     cursor: pointer;
 }
 /* Opcional: Estilo cuando el ratón pasa por encima para dar feedback */
-.galleta-aleatoria:hover {
+.evento-aleatorio:hover {
     transform: scale(1.1);
 }

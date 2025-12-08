@@ -1,0 +1,54 @@
+.num{
+    font-size: 50px;
+    color: white;
+    
+}
+.contenedor_principal {
+    flex-direction: column; 
+    align-items: center; 
+}
+.contendor{
+    width: 100px;
+    height: 300px;
+    background-color: antiquewhite;
+    border: solid 2px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.circulo{
+    width: 75px;
+    height: 75px;
+    margin: 15px;
+    border-radius: 50%;
+    border: solid 2px black;
+}
+
+.verde{
+    background-color: green;
+}
+.rojo{
+    background-color: red;
+}
+.naranja{
+    background-color: orange;
+}
+.gris{
+    background-color: grey;
+}
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  transition: background-image 0.5s ease-in-out;
+}
+
+

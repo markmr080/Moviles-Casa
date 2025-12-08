@@ -1,0 +1,69 @@
+.contenedor{
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.sonic {
+    width: 150px;
+    height: 150px; 
+    background-image: url('/images/sonic1-sheet.png');
+    background-repeat: no-repeat;
+    background-position: 0 0; 
+}
+
+button{
+    cursor: pointer;
+    justify-content: center;
+}
+
+.sonic-no {
+    animation: sonicAnimIdle 0.2856s steps(2) infinite;
+}
+
+@keyframes sonicAnimIdle {
+    from {
+        background-position: 0 0; 
+    }
+    to {
+        background-position: -300px 0;
+    }
+}
+.sonic-congelado{
+    animation: sonicCongelado 2s steps(1) infinite;
+}
+
+@keyframes sonicCongelado {   
+    from {
+        background-position: -300px 0;
+    }
+    to {
+        background-position: -2100px 0;
+    }
+
+}
+
+.sonic-enfadado {
+    animation: sonicAnimFull 2s steps(11) forwards;
+}
+
+@keyframes sonicAnimFull {
+    from {
+        background-position: -450px 0; 
+    }
+    to {
+        background-position: -2100px 0;
+    }
+}
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  transition: background-image 0.5s ease-in-out;
+}

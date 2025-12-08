@@ -1,7 +1,7 @@
 <div class="contenedor ">
     <img 
-        src="/images/LlaveRiku.png"  
-        class="galleta-aleatoria"
+        src="/images/cona.png"  
+        class="evento-aleatorio"
         [style.top]="topPosition" 
         [style.left]="leftPosition"
         style="position: absolute;" 
@@ -10,6 +10,10 @@
 
 
     <div class="mejoras">
+        <div class="boton">    
+            <img src="/images/LlaveDelReino.png" width="50" height="50"> 
+            <div class="mejora" (click)="clicker.resetear()">Resetear</div>
+        </div>
         <div class="boton">    
             <img src="/images/LlaveDelReino.png" width="50" height="50"> 
             <p></p>
@@ -43,4 +47,5 @@
         <div class="sora"></div>
         <div class="contador">{{ clicker.clicksTotales }}</div>
     </div>
+    
 </div>

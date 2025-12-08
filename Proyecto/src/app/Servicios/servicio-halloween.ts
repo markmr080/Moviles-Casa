@@ -1,5 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { LocalStorage } from './local-storage';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,10 @@ export class ServicioHalloween {
   navidad:boolean = false;
 
   modoCambiado = new EventEmitter<boolean>();
+
+  constructor(private localSto:LocalStorage){
+    
+  }
 
   cambiarModo(esHalloween:boolean) {
     this.halloween = esHalloween;
@@ -49,7 +54,19 @@ export class ServicioHalloween {
         fondoNormal = '/images/kingdom-hearts-wallpaper-preview.jpg';
         fondoHalloween = '/images/kingdom-hearts-full-1449600.jpg';
         fondoNavidad = '/images/christmas-town-from-kingdom-hearts-x-the-nightmare-before-v0-4scyzwbkxh7a1.jpg';
-        break;  
+        break; 
+      
+      case 'contador':
+        fondoNormal = 'https://img.freepik.com/fotos-premium/fondo-formularios-digitales-abstractos-forma-trapcode-puntos-lineas-brillantes-fondo_799261-292.jpg';
+        fondoHalloween = 'https://static.vecteezy.com/system/resources/previews/003/305/280/non_2x/halloween-festivity-background-free-vector.jpg';
+        fondoNavidad = 'https://wallpapers.com/images/hd/1920x1080-hd-christmas-a4w9iz29xd804afm.jpg';
+      break; 
+
+      case 'eye-candy':
+        fondoNormal = '/images/fondo greenhils.png';
+        fondoHalloween = '/images/sonicHall.jpg';
+        fondoNavidad = '/images/sonicNav.jpg';
+      break;     
 
       default:
         fondoNormal = '';
