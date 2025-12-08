@@ -1,4 +1,14 @@
 <div class="contenedor ">
+    <img 
+        src="/images/LlaveRiku.png"  
+        class="galleta-aleatoria"
+        [style.top]="topPosition" 
+        [style.left]="leftPosition"
+        style="position: absolute;" 
+        (click)="clickGalleta()"
+        *ngIf="isGalletaVisible">
+
+
     <div class="mejoras">
         <div class="boton">    
             <img src="/images/LlaveDelReino.png" width="50" height="50"> 

@@ -19,9 +19,11 @@ export class ClickerService {
   costeMejora3:number = 10000;
   numeroMejoras3:number = 1;
  
-
+  mejoraAleatoria:number = 600;
 
   private intervalId: any;
+
+  //apartado clicks
 
   click(){
     this.clicksTotales += this.valorClick;
@@ -33,6 +35,17 @@ export class ClickerService {
     }, 3000); // 3000 ms = 3 segundos
   }
   
+  //apartado elementos aleatorios
+
+  sumarMejora(){
+    this.clicksTotales += this.mejoraAleatoria;
+  }
+
+
+
+
+
+  //apartado mejoras
 
   clickMejora1(){
     const valormejora= this.costeMejora1;
