@@ -1,0 +1,77 @@
+.chibi1{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0.5%;
+    background-image: url('/images/anubis.png');
+    animation: run 1s steps(12) infinite, animacion1 var(--animacion1) infinite;
+}
+.chibi2{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0.5%;
+    background-image: url('/images/old-guy.png');
+    animation: run 1s steps(12) infinite, animacion1 var(--animacion1) infinite;
+}
+.chibi3{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0.5%;
+    background-image: url('/images/hell-knight.png');
+    animation: run 1s steps(12) infinite, animacion1 var(--animacion1) infinite;
+}
+.chibi4{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0.5%;
+    background-image: url('/images/pirate.png');
+    animation: run 1s steps(12) infinite, animacion1 var(--animacion1) infinite;
+}
+.chibi5{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0.5%;
+    background-image: url('/images/succubus.png');
+    animation: run 1s steps(12) infinite, animacion1 var(--animacion1) infinite;
+}
+
+:host {
+  width: 100vw;
+  height: 100vh;
+  background-repeat: repeat-x;
+  background-size: cover;
+  transition: background-image 0.5s ease-in-out;
+  animation: escen 10s linear infinite;
+}
+
+@keyframes escen {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1920px 0;
+  }
+}
+
+@keyframes animacion1{
+   0% { 
+        transform: translateX(-1000px) scaleX(1); 
+    } 
+
+    100% {
+        transform: translateX(100vw) scaleX(1); 
+    }    
+}
+
+@keyframes run{
+    0%{
+        background-position-x:0px;
+    }
+    100%{
+        background-position-x:-2400px;
+    }
+}

@@ -66,7 +66,13 @@ export class ServicioHalloween {
         fondoNormal = '/images/fondo greenhils.png';
         fondoHalloween = '/images/sonicHall.jpg';
         fondoNavidad = '/images/sonicNav.jpg';
-      break;     
+      break; 
+
+      case 'animacion':
+        fondoNormal = '/images/Battleground2.png';
+        fondoHalloween = '/images/Battleground4.png';
+        fondoNavidad = '/images/BG_02.png';
+      break;      
 
       default:
         fondoNormal = '';
