@@ -40,7 +40,7 @@ export class Animacion {
         let numeroEsta = false;
         do {
           numeroSiRepite = Math.round(Math.random() * 10) + 5;
-          numeroEsta = false;
+          numeroEsta = false
           for(let k = 0; k<this.numeroChibis; k++){
             if (numeroSiRepite == this.velocidad[k]){
               numeroEsta = true;

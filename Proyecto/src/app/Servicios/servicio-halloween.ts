@@ -57,9 +57,9 @@ export class ServicioHalloween {
         break; 
       
       case 'contador':
-        fondoNormal = 'https://img.freepik.com/fotos-premium/fondo-formularios-digitales-abstractos-forma-trapcode-puntos-lineas-brillantes-fondo_799261-292.jpg';
-        fondoHalloween = 'https://static.vecteezy.com/system/resources/previews/003/305/280/non_2x/halloween-festivity-background-free-vector.jpg';
-        fondoNavidad = 'https://wallpapers.com/images/hd/1920x1080-hd-christmas-a4w9iz29xd804afm.jpg';
+        fondoNormal = '/images/fondof1.jpg';
+        fondoHalloween = '/images/mercedesHall.jpg';
+        fondoNavidad = '/images/cocheNavidad.jpg';
       break; 
 
       case 'eye-candy':
