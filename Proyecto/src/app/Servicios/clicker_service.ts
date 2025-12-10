@@ -116,7 +116,7 @@ export class ClickerService {
     if (this.numeroMejoras === 0) {
     this.valorClick = 2;
   } else {
-    this.valorClick = Math.round(this.valorClick * 0.3 + this.numeroMejoras) ;
+    this.valorClick = Math.round(this.valorClick * 0.7 + this.numeroMejoras) ;
   }
 
     this.numeroMejoras++;
