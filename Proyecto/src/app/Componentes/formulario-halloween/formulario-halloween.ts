@@ -9,6 +9,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, provideNativeDateAdapter } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { LocalStorage } from '../../Servicios/local-storage';
 
 @Component({
   selector: 'app-formulario-halloween',
@@ -43,7 +44,7 @@ export class FormularioHalloween implements OnInit{
   formulario: FormGroup;
   formularioHalloween: FormGroup;
 
-  constructor(private fb: FormBuilder, public esHalloween: ServicioHalloween) {
+  constructor(private fb: FormBuilder, public esHalloween: ServicioHalloween, private localSto: LocalStorage) {
     
     this.formulario = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]],
@@ -71,6 +72,7 @@ export class FormularioHalloween implements OnInit{
         console.log("El formulario contiene errores.");
       }else {
         console.log(this.formulario.value);
+        this.guardarEstadoFN();
       }
   }
 
@@ -80,7 +82,9 @@ export class FormularioHalloween implements OnInit{
         alert("🩸¡Este formulario no asustaria a nadie, rellenalo!👻");
       }else {
         console.log(this.formularioHalloween.value);
+         this.guardarEstadoFH()
          alert("🎃 ¡Bienvenido/a, " + this.formularioHalloween.get('nombre_halloween')?.value + " Tu entrada para la fiesta del castillo ha sido registrada con éxito.");
+        
       }
   }
 
@@ -102,6 +106,23 @@ export class FormularioHalloween implements OnInit{
 
     });
   }
+  //FN = FormularioNormal
+  guardarEstadoFN(){
+    this.localSto.setItem('form.nombre', this.formulario.value.nombre)
+    this.localSto.setItem('form.email', this.formulario.value.email)
+    this.localSto.setItem('form.edad', this.formulario.value.edad)
+
+  }
+  //FH = FormularioHalloween
+  guardarEstadoFH(){
+    this.localSto.setItem('form.nombre_Halloween', this.formularioHalloween.value.nombre_halloween)
+    this.localSto.setItem('form.email_Halloween', this.formularioHalloween.value.email_halloween)
+    this.localSto.setItem('form.disfraz', this.formularioHalloween.value.disfraz)
+    this.localSto.setItem('form.checkBox', this.formularioHalloween.value.checkBox)
+    this.localSto.setItem('form.fechallegada', this.formularioHalloween.value.fechaLlegada)
+    
+  }
+
 }
 
 

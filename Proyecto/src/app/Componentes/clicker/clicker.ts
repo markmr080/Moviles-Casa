@@ -55,37 +55,37 @@ export class Clicker implements OnInit {
   cargarEstado(){       
   //Con el String (this.clicker.valor) se asigna por defecto el valor que tiene en el servicio en caso de que sea null
   //Metodo parseInt() pasa a int la string que se obtiene del localStorage 
-    this.clicker.clicksTotales = parseInt(this.localSto.getItem('ClicksTotales') || String(this.clicker.clicksTotales));
-    this.clicker.valorClick = parseInt(this.localSto.getItem('ValorClick') || String(this.clicker.valorClick));
+    this.clicker.clicksTotales = parseInt(this.localSto.getItem('clicker.ClicksTotales') || String(this.clicker.clicksTotales));
+    this.clicker.valorClick = parseInt(this.localSto.getItem('clicker.ValorClick') || String(this.clicker.valorClick));
 
-    this.clicker.totalMejoraAuto = parseInt(this.localSto.getItem('TotalMejoraAuto') || String(this.clicker.totalMejoraAuto));
-    this.clicker.costeMejoraAuto = parseInt(this.localSto.getItem('CosteMejoraAuto') || String(this.clicker.costeMejoraAuto));
+    this.clicker.totalMejoraAuto = parseInt(this.localSto.getItem('clicker.TotalMejoraAuto') || String(this.clicker.totalMejoraAuto));
+    this.clicker.costeMejoraAuto = parseInt(this.localSto.getItem('clicker.CosteMejoraAuto') || String(this.clicker.costeMejoraAuto));
 
 
-    this.clicker.costeMejora1 = parseInt(this.localSto.getItem('CosteMejora1') || String(this.clicker.costeMejora1));
-    this.clicker.numeroMejoras = parseInt(this.localSto.getItem('NumeroMejoras1') || String(this.clicker.numeroMejoras)); 
+    this.clicker.costeMejora1 = parseInt(this.localSto.getItem('clicker.CosteMejora1') || String(this.clicker.costeMejora1));
+    this.clicker.numeroMejoras = parseInt(this.localSto.getItem('clicker.NumeroMejoras1') || String(this.clicker.numeroMejoras)); 
     
 
-    this.clicker.costeMejora2 = parseInt(this.localSto.getItem('CosteMejora2') || String(this.clicker.costeMejora2));
-    this.clicker.numeroMejoras2 = parseInt(this.localSto.getItem('NumeroMejoras2') || String(this.clicker.numeroMejoras2)); 
+    this.clicker.costeMejora2 = parseInt(this.localSto.getItem('clicker.CosteMejora2') || String(this.clicker.costeMejora2));
+    this.clicker.numeroMejoras2 = parseInt(this.localSto.getItem('clicker.NumeroMejoras2') || String(this.clicker.numeroMejoras2)); 
   
-    this.clicker.costeMejora3 = parseInt(this.localSto.getItem('CosteMejora3') || String(this.clicker.costeMejora3));
-    this.clicker.numeroMejoras3 = parseInt(this.localSto.getItem('NumeroMejoras3') || String(this.clicker.numeroMejoras3));
+    this.clicker.costeMejora3 = parseInt(this.localSto.getItem('clicker.CosteMejora3') || String(this.clicker.costeMejora3));
+    this.clicker.numeroMejoras3 = parseInt(this.localSto.getItem('clicker.NumeroMejoras3') || String(this.clicker.numeroMejoras3));
   }
 
   //Se guarda el estado actual de los parametros del clicker
   //Metodo String() sirve para pasar los int de los valores a String para poder almacenarlo.
   guardarEstado(){
-    this.localSto.setItem('ClicksTotales', String(this.clicker.clicksTotales));
-    this.localSto.setItem('ValorClick', String(this.clicker.valorClick));
-    this.localSto.setItem('TotalMejoraAuto', String(this.clicker.totalMejoraAuto));
-    this.localSto.setItem('CosteMejoraAuto', String(this.clicker.costeMejoraAuto));
-    this.localSto.setItem('CosteMejora1', String(this.clicker.costeMejora1));
-    this.localSto.setItem('NumeroMejoras1', String(this.clicker.numeroMejoras));
-    this.localSto.setItem('CosteMejora2', String(this.clicker.costeMejora2));
-    this.localSto.setItem('NumeroMejoras2', String(this.clicker.numeroMejoras2));
-    this.localSto.setItem('CosteMejora3', String(this.clicker.costeMejora3));
-    this.localSto.setItem('NumeroMejoras3', String(this.clicker.numeroMejoras3));
+    this.localSto.setItem('clicker.ClicksTotales', String(this.clicker.clicksTotales));
+    this.localSto.setItem('clicker.ValorClick', String(this.clicker.valorClick));
+    this.localSto.setItem('clicker.TotalMejoraAuto', String(this.clicker.totalMejoraAuto));
+    this.localSto.setItem('clicker.CosteMejoraAuto', String(this.clicker.costeMejoraAuto));
+    this.localSto.setItem('clicker.CosteMejora1', String(this.clicker.costeMejora1));
+    this.localSto.setItem('clicker.NumeroMejoras1', String(this.clicker.numeroMejoras));
+    this.localSto.setItem('clicker.CosteMejora2', String(this.clicker.costeMejora2));
+    this.localSto.setItem('clicker.NumeroMejoras2', String(this.clicker.numeroMejoras2));
+    this.localSto.setItem('clicker.CosteMejora3', String(this.clicker.costeMejora3));
+    this.localSto.setItem('clicker.NumeroMejoras3', String(this.clicker.numeroMejoras3));
   }
 
 
