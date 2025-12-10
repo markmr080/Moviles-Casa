@@ -18,13 +18,13 @@
   color: white; 
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .opcion2 {
     display: none;
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   .opcion1 {
     display: none;
   }
