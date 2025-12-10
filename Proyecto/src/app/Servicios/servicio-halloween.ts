@@ -75,8 +75,9 @@ export class ServicioHalloween {
       break;      
 
       default:
-        fondoNormal = '';
-        fondoHalloween = '';
+        fondoNormal = '/images/default1.jpg';
+        fondoHalloween = '/images/default2.png';
+        fondoNavidad = '/images/default3.jpg'
         break;
     }
 

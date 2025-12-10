@@ -55,7 +55,7 @@
     background-position: 0 0;
   }
   to {
-    background-position: -1920px 0;
+    background-position: -100vw 0;
   }
 }
 
